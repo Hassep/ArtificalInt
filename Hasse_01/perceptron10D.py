@@ -7,15 +7,14 @@ import os, subprocess
 class Perceptron:
     def __init__(self, N):
         # Random linearly separated data
-        random.seed(0)
-        xA,yA,xB,yB = [random.uniform(-1, 1) for i in range(4)]
+        xA,yA,xB,yB,xC,yC,xD,yD,xE,yE,xF,yF,xG,yG,xH,yH,xI,yI,xJ,yJ = [random.uniform(-1, 1) for i in range(20)]
         self.V = np.array([xB*yA-xA*yB, yB-yA, xA-xB])
         self.X = self.generate_points(N)
  
     def generate_points(self, N):
         X = []
         for i in range(N):
-            x1,x2 = [random.uniform(-1, 1) for i in range(2)]
+            x1,x2,x3,x4,x5,x6,x7,x8,x9,x10 = [random.uniform(-1, 1) for i in range(10)]
             x = np.array([1,x1,x2])
             s = int(np.sign(self.V.T.dot(x)))
             X.append((x, s))
@@ -97,7 +96,7 @@ class Perceptron:
         return self.classification_error(vec, pts=check_pts)
 
 def main():
-    p = Perceptron(1000)
+    p = Perceptron(100)
     p.pla(save=True)
     p.plot()
 
