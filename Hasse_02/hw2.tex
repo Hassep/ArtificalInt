@@ -1,0 +1,100 @@
+\documentclass[a4paper]{article}
+\usepackage[letterpaper, margin=1in]{geometry} % page format
+\usepackage{listings} % this package is for including code
+\usepackage{graphicx} % this package is for including figures
+\usepackage{amsmath}  % this package is for math and matrices
+\usepackage{amsfonts} % this package is for math fonts
+\usepackage{tikz} % for drawings
+\usepackage{hyperref} % for urls
+\usepackage{ifthen}
+ \usepackage{setspace} 
+
+\newcommand\myqed{}                 % creates command for tombstone at end of proof
+\newcommand{\printmyqed}[1][]       % decides whether to print tombstone or not
+   {%
+   \ifthenelse{\equal{#1}{Proof}}
+   {\renewcommand{\myqed}{\qed}}
+   {\renewcommand{\myqed}{}}
+   }
+
+\newenvironment{exercise}[1][]{%
+  \bigskip                          % Space before problem statement
+  \noindent \textsf{Exercise #1.\quad}\slshape }{}
+     
+\newenvironment{response}[1][\textit{Solution}]{%
+  \printmyqed[#1]
+  \begin{spacing}{\spacingfactor}
+  \medskip                          % Space before solution 
+  \noindent \textit{#1.\quad}}{\myqed\end{spacing}\medskip\hrule}
+
+
+\title{Homework 02}
+\author{Philip Hasse}
+\date{9/29/16}
+
+\begin{document}
+\lstset{language=Python}
+
+\maketitle
+
+\section{Solution to Problem 2.1(a)}
+The equation to find the sample size, $N$, with a complexity of $M=1$ is $\epsilon(M,N,\delta) = \sqrt{\frac{1}{2N}\ln(\frac{2(1)}{.03})} \le .05$.
+\begin{align}
+&= \frac{1}{2N}\ln(\frac{2(1)}{.03}) \le .0025 \\
+&= \ln(\frac{2}{.03}) \le .005N \\
+&= \frac{\ln(\frac{2}{.03})}{.005} \le N \\
+&= N \ge 840
+\end{align}
+\section{Solution to Problem 2.1(b)}
+Simlar to the previous question we use the equation to find the sample size, $N$, with a complexity of $M=100$ this time.
+\begin{align}
+ \epsilon(M,N,\delta) &= \sqrt{\frac{1}{2N}\ln(\frac{2(100)}{.03})} \le .05 \\
+&= \frac{1}{2N}\ln(\frac{2(100)}{.03}) \le .0025 \\
+&= \ln(\frac{200}{.03}) \le .005N \\
+&= \frac{\ln(\frac{200}{.03})}{.005} \le N \\
+&= N \ge 1761
+\end{align}
+
+\section{Solution to Problem 2.1(c)}
+Simlar to the previous question we use the equation to find the sample size, $N$, with a complexity of $M=10000$ this time.
+\begin{align}
+ \epsilon(M,N,\delta) &= \sqrt{\frac{1}{2N}\ln(\frac{2(10000)}{.03})} \le .05 \\
+&= \frac{1}{2N}\ln(\frac{20000}{.03}) \le .0025 \\
+&= \ln(\frac{20000}{.03}) \le .005N \\
+&= \frac{\ln(\frac{20000}{.03})}{.005} \le N \\
+&= N \ge 2683
+\end{align}
+
+\section{Solution to Problem 2.11(N=100)}
+To find the the outside error we use the equation $E_{out}(g) \le E_{in}(g) + \frac{8}{N}\ln(\frac{m_H(2N)}{\delta})$.
+Plugging our given values we get $E_{out}(g) \le E_{in}(g) + \frac{8}{100}\ln(\frac{4(200+1)}{.1}) = E_{in}(g) + 0.719$
+
+
+\section{Solution to Problem 2.11(N=10000)}
+Similar to the last problem, to find the the outside error we use the equation $E_{out}(g) \le E_{in}(g) + \frac{8}{N}\ln(\frac{m_H(2N)}{\delta})$.
+Plugging our given values we get $E_{out}(g) \le E_{in}(g) + \frac{8}{10000}\ln(\frac{4(20000+1)}{.1}) = E_{in}(g) + 0.011$
+
+\section{Solution to Problem 2.12}
+To find the sample size, $N$, with the given information we use the equation $N \ge \frac{8}{\epsilon^2}\ln(\frac{4((2N)^{d_{vc}}+1)}{\delta})$.
+Plugging in our given values we get:
+\begin{align}
+N \ge \frac{8}{.05^2}\ln(\frac{4((2N)^10+1)}{.05}) &= 3200N \ge \ln(\frac{4((2N)^10+1)}{.05}) \\
+&= N \ge 452957
+\end{align}
+
+\section{Solution to Problem 3.1}
+\begin{figure}
+  \includegraphics[width=\linewidth]{31(a).jpg}
+  \caption{3.1}
+  \label{fig:3.1(a)}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{31(b).png}
+  \caption{3.1}
+  \label{fig:3.1(b)}
+\end{figure}
+
+
+
+\end{document}
