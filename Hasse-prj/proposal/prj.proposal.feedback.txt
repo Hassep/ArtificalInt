@@ -1,0 +1,11 @@
+10 pts
+
+The idea is great. Using deep learning is interesting and if you (we) are
+successful in this project you (we) could write a paper for a conference (if
+you are interested). The only concern I have is the eye-tracking part. Is that
+info available as part of the dataset? or are you planning on doing this
+yourself?
+
+If the data is there, go for it.
+
+- Dr. Rivas
