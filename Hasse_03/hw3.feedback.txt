@@ -1,0 +1,29 @@
+45 pts
+
+Phillip,
+
+Here is the breakdown of your grade and feedback by parts:
+
+1.a) Pocket Algorithm starting at w=0
+
+- Good experiments.
+
+- You reported no E_out. -5pts
+
+1.b) Linear Regression as classification
+
+- Good experiments.
+
+- You reported no E_out -5pts
+
+1.c) Pocket Algorithm starting with Linear Regression
+
+- Same as a) and b) -5pts
+
+- Good experiments.
+
+
+
+Peace,
+- Dr. Rivas
+
